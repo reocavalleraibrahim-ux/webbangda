@@ -1,5 +1,22 @@
 <footer id="footer" class="footer light-background">
 
+<!-- STICKY FOOTER -->
+<div class="sticky-footer">
+    <button class="menu-btn" id="menuToggle">
+        <i class="bi bi-link-45deg"></i> Link Terkait
+    </button>
+</div>
+
+<!-- POPOVER PANEL -->
+<div id="popoverMenu" class="popover-panel">
+    <div class="menu-grid">
+        <a href="#">E-Controlling</a>
+        <a href="#">Pak Bejo</a>
+        <a href="#">Sivero</a>
+        <a href="#">Simbangda</a>
+    </div>
+</div>
+
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-6 footer-info">
@@ -46,9 +63,27 @@
       </div>
     </div>
 
-    
-
   </footer>
+  <script>
+    const pop = document.getElementById("popoverMenu");
+    const btn = document.getElementById("menuToggle");
+
+    // toggle saat tombol diklik
+    btn.addEventListener("click", function(e) {
+        e.stopPropagation(); // penting!
+        pop.classList.toggle("show");
+    });
+
+    // klik di dalam popover tidak menutup
+    pop.addEventListener("click", function(e) {
+        e.stopPropagation();
+    });
+
+    // klik di luar = close
+    document.addEventListener("click", function() {
+        pop.classList.remove("show");
+    });
+  </script>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -68,7 +103,5 @@
 
   <!-- Main JS File -->
   <script src="{{ asset('orbit/js/main.js')}}"></script>
-
 </body>
-
 </html>

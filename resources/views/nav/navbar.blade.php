@@ -1,17 +1,17 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
       
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0 ms-3">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
         <img src="{{asset('image/jateng.png')}}" style="max-height:60px;">
-        <h1 class="sitename">Biro Administrasi Pembangunan Daerah</h1>
+        <h1 class="sitename ms-2">Biro Administrasi Pembangunan Daerah</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu me-2">
         <ul>
           <li><a href="#hero">Beranda</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
           <li><a href="#berita">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Dokumen Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>

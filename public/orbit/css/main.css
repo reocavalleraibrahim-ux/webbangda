@@ -25,8 +25,6 @@
   --accent-color: #0ea5e9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --pale-blue:#3674B5;
-  --deep-navy:#001f42;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -147,7 +145,7 @@ h6 {
 .header {
   --surface-color: #1b2430;
   color: var(--default-color);
-  background-color: var(--pale-blue);
+  background-color: var(--background-color);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -167,7 +165,7 @@ h6 {
   font-size: 30px;
   margin: 0;
   font-weight: 600;
-  color: var(--background-color);
+  color: var(--heading-color);
 }
 
 .header .logo span {
@@ -232,7 +230,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--background-color);
+    color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
@@ -259,7 +257,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--deep-navy);
+    color: var(--nav-hover-color);
   }
 
   .navmenu .dropdown ul {

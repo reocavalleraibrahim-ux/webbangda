@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="{{asset('orbit/css/main.css')}}" rel="stylesheet">
+  <link href="{{asset('orbit/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Orbit

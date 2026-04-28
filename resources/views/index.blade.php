@@ -57,7 +57,7 @@
 </section>
 
   <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="tentang" class="about section">
 
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
@@ -81,22 +81,15 @@
               <p class="mb-4 description">
                 Tugas dan Fungsi kami diatur dalam <b>Peraturan Gubernur Jawa tengah Nomor 1 Tahun 2026 tentang Kedudukan, Susunan, Organisasi, Tugas dan Fungsi, Serta Tata Kerja Sekretariat Daerah, Sekretariat Dewan Perwakilan Rakyat Daerah, Inspektorat dan Pembentukan Staf Ahli Gubernur</b>.
               </p>
-              <div class="section-subtitle">Layanan Kami</div>
               <div class="features-grid">
                 <div class="feature-card">
-                  <span>E-Controlling</span>
+                  <span>Tugas Pokok dan Fungsi</span>
                 </div>
                 <div class="feature-card">
-                  <span>E-RKO</span>
+                  <span>Maklumat Pelayanan</span>
                 </div>
                 <div class="feature-card">
-                  <span>Pak Bejo</span>
-                </div>
-                <div class="feature-card">
-                  <span>Simbangda</span>
-                </div>
-                <div class="feature-card">
-                  <span>Sivero</span>
+                  <span>Standar Pelayanan</span>
                 </div>
               </div>
 
