@@ -12,17 +12,11 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute top-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner h-100">
 
-      <div class="carousel-item active h-100">
-        <img src="{{asset('image/struktur.png')}}" class="d-block w-100 h-100 object-fit-cover">
-      </div>
-
-      <div class="carousel-item h-100">
-        <img src="{{asset('image/struktur.png')}}" class="d-block w-100 h-100 object-fit-cover">
-      </div>
-
-      <div class="carousel-item h-100">
-        <img src="{{asset('image/struktur.png')}}" class="d-block w-100 h-100 object-fit-cover">
-      </div>
+      @foreach($slider as $s):
+        <div class="carousel-item active h-100">
+          <img src="{{ asset('storage/'.$s->name) }}" class="d-block w-100 h-100 object-fit-cover">
+        </div>
+      @endforeach
 
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
             <span class="carousel-control-prev-icon btn btn-primary" aria-hidden="true"></span>

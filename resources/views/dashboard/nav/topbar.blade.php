@@ -58,7 +58,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img class="img-radius avatar rounded-0" src="../assets/images/user/avatar-1.png" alt="Generic placeholder image" />
+                  <img class="img-radius avatar rounded-0" src="" alt="Generic placeholder image" />
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <span class="float-end text-sm text-muted">2 min ago</span>
@@ -75,7 +75,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img class="img-radius avatar rounded-0" src="../assets/images/user/avatar-2.png" alt="Generic placeholder image" />
+                  <img class="img-radius avatar rounded-0" src="" alt="Generic placeholder image" />
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <span class="float-end text-sm text-muted">1 hour ago</span>
@@ -90,7 +90,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img class="img-radius avatar rounded-0" src="../assets/images/user/avatar-3.png" alt="Generic placeholder image" />
+                  <img class="img-radius avatar rounded-0" src="" alt="Generic placeholder image" />
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <span class="float-end text-sm text-muted">2 hour ago</span>
@@ -107,7 +107,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img class="img-radius avatar rounded-0" src="../assets/images/user/avatar-4.png" alt="Generic placeholder image" />
+                  <img class="img-radius avatar rounded-0" src="" alt="Generic placeholder image" />
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <span class="float-end text-sm text-muted">12 hour ago</span>
@@ -123,7 +123,7 @@
             <div class="card-body">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img class="img-radius avatar rounded-0" src="../assets/images/user/avatar-5.png" alt="Generic placeholder image" />
+                  <img class="img-radius avatar rounded-0" src="" alt="Generic placeholder image" />
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <span class="float-end text-sm text-muted">5 hour ago</span>
@@ -158,7 +158,7 @@
         <div class="dropdown-header d-flex align-items-center justify-content-between bg-primary">
           <div class="d-flex my-2">
             <div class="flex-shrink-0">
-              <img src="../assets/images/user/avatar-2.png" alt="user-image" class="user-avatar wid-35" />
+              <img src="" alt="user-image" class="user-avatar wid-35" />
             </div>
             <div class="flex-grow-1 ms-3">
               <h6 class="text-white mb-1">Carson Darrin 🖖</h6>

@@ -17,7 +17,6 @@
     <!-- [Page Specific JS] start -->
     <!-- apexcharts js -->
     <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('datta/js/plugins/apexcharts.min.js') }}"></script>
 
     <script src="{{ asset('datta/js/plugins/jsvectormap.min.js') }}"></script>
     <script src="{{ asset('datta/js/plugins/world.js') }}"></script>
@@ -43,8 +42,7 @@
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-
-
+    
        
     <script>
       layout_change('light');

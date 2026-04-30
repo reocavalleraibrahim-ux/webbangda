@@ -3,7 +3,7 @@
   <!-- [Head] start -->
 
   <head>
-    <title>@yield('title') | Biro Pemerintahan Otonomi dan Kerja Sama</title>
+    <title>@yield('title') | Biro Administrasi Pembangunan Daerah</title>
     <!-- [Meta] -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
 <script>

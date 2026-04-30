@@ -25,16 +25,26 @@
           <label data-i18n="pages">Master</label>
           <i class="ph ph-shield-checkered"></i>
         </li>
-        <li class="pc-item">
-          <a href="{{url('/master')}}" class="pc-link">
-            <span class="pc-micon"> <i class="ph ph-database"></i></span>
-            <span class="pc-mtext">Master</span>
-          </a>
+        <li class="pc-item pc-hasmenu">
+          <a href="#!" class="pc-link"
+            ><span class="pc-micon"> <i class="ph ph-database"></i> </span><span class="pc-mtext" data-i18n="Menu levels">Data Master</span
+            ><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span
+          ></a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><a class="pc-link" href="{{url('/master')}}" data-i18n="Level 2.1">Master Data Web</a></li>
+            <li class="pc-item"><a class="pc-link" href="{{url('/bagian')}}" data-i18n="Level 2.1">Data Bagian</a></li>  
+          </ul>
         </li>
         <li class="pc-item">
           <a href="{{url('/slider')}}" class="pc-link">
             <span class="pc-micon"> <i class="ph ph-image"></i></span>
             <span class="pc-mtext">Slider</span>
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="{{url('/agenda')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-calendar-dots"></i></span>
+            <span class="pc-mtext">Agenda</span>
           </a>
         </li>
         <li class="pc-item">
