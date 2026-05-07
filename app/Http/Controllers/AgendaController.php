@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bagian;
+use App\Models\Agenda;
 
 class AgendaController extends Controller
 {
@@ -13,7 +14,8 @@ class AgendaController extends Controller
     public function index()
     {
         $page = 'agenda';
-        return view('dashboard.agenda.main',compact('page'));
+        $agenda = Agenda::join('bagian','agenda.id_bagian','=','bagian.id')->get();
+        return view('dashboard.agenda.main',compact('page','agenda'));
     }
 
     /**
@@ -32,7 +34,26 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_agenda'   =>  'required|string',
+            'waktu'         =>  'required|string',
+            'tanggal'       =>  'required|date',
+            'tempat'        =>  'required|string',
+            'id_bagian'     =>  'required|numeric',
+        ]);
+
+        $data = [
+            'nama_agenda'   =>  $request->nama_agenda,
+            'waktu'         =>  $request->waktu,
+            'tanggal'       =>  $request->tanggal,
+            'tempat'        =>  $request->tempat,
+            'id_bagian'     =>  $request->id_bagian,
+            'user_create'   =>  session()->get('name')
+        ];
+        Agenda::create($data);
+
+        return redirect('/agenda')->with('success','Berhasil menambahkan agenda');
+
     }
 
     /**
@@ -48,7 +69,11 @@ class AgendaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $page = 'agenda';
+        $act = 'edit';
+        $bagian = Bagian::all();
+        $agenda = Agenda::where(['id' => $id])->first();
+        return view('dashboard.agenda.form',compact('page','act','bagian','agenda'));
     }
 
     /**
@@ -56,7 +81,26 @@ class AgendaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama_agenda'   =>  'required|string',
+            'waktu'         =>  'required|string',
+            'tanggal'       =>  'required|date',
+            'tempat'        =>  'required|string',
+            'id_bagian'     =>  'required|numeric',
+        ]);
+
+        $data = [
+            'nama_agenda'   =>  $request->nama_agenda,
+            'waktu'         =>  $request->waktu,
+            'tanggal'       =>  $request->tanggal,
+            'tempat'        =>  $request->tempat,
+            'id_bagian'     =>  $request->id_bagian,
+            'user_edit'   =>  session()->get('name')
+        ];
+        $agenda = Agenda::where(['id' => $id]);
+        $agenda->update($data);
+
+        return redirect('/agenda')->with('success','Berhasil mengupdate agenda');
     }
 
     /**

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('tempat');
             $table->foreignId('id_bagian')->references('id')->on('bagian');
             $table->string('user_create');
-            $table->string('user_edit');
+            $table->string('user_edit')->nullable();
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@
               <div class="card-body px-0 py-3">
                 <div class="table-responsive">
                 @if($act == 'create')
-                  <form method="post" action="{{ url('/bagian')}}" enctype="multipart/form-data">
+                  <form method="post" action="{{ url('/agenda')}}" enctype="multipart/form-data">
                 @else
-                  <form method="post" action="{{ url('/bagian/'.$bagian->id)}}" enctype="multipart/form-data">
+                  <form method="post" action="{{ url('/agenda/'.$agenda->id)}}" enctype="multipart/form-data">
                   @method('PUT')
                 @endif
                      @csrf
@@ -29,6 +29,14 @@
                                 <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" placeholder="Nama Agenda">
                             @else
                                 <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" placeholder="Nama Agenda" value="{{$agenda->nama_agenda}}">
+                            @endif
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Tanggal</label>
+                            @if($act == 'create')
+                                <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Waktu">
+                            @else
+                                <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Waktu" value="{{$agenda->tanggal}}">
                             @endif
                         </div>
                         <div class="col-md-6">
@@ -52,7 +60,13 @@
                             <select name="id_bagian" class="form-control">
                                 <option>Pilih Bagian</option>
                                 @foreach($bagian as $b)
+                                  @if($act == 'create'):
                                     <option value="{{$b->id}}">{{$b->nama_bagian}} - {{$b->kode_bagian}}</option>
+                                  @else
+                                     @if($b->id == $agenda->id_bagian)
+                                      <option value="{{$b->id}}" selected>{{$b->nama_bagian}} - {{$b->kode_bagian}}</option>
+                                     @endif 
+                                  @endif
                                 @endforeach
                             </select>
                         </div>

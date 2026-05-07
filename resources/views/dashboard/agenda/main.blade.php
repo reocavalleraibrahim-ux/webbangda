@@ -27,7 +27,23 @@
                         <th>Aksi</th>
                     </thead>
                     <tbody>
-                      
+                      @foreach($agenda as $a)
+                      <tr>
+                        <td>{{$a->nama_agenda}}</td>
+                        <td>{{date('d F Y',strtotime($a->tanggal))}}</td>
+                        <td>{{$a->waktu}}</td>
+                        <td>{{$a->tempat}}</td>
+                        <td>{{$a->nama_bagian}} ({{$a->nama_pengarah}})</td>
+                        <td>
+                            <a href="{{ url('/agenda/'.$a->id.'/edit')}}" class="badge me-2 bg-blue-300 text-white f-12">edit</a>
+                            <form action="{{ route('agenda.destroy', $a->id) }}" method="POST" style="display:inline" onsubmit="return confirm('Yakin Menghapus Agenda?')">
+                            @csrf
+                            @method('DELETE')
+                                <button type="submit" class="badge me-2 bg-red-500 text-white f-12" style="border:none;">Hapus</button>
+                            </form>
+                        </td>
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
