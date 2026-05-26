@@ -15,6 +15,25 @@
                 <a href="{{ url('/berita')}}" class="btn btn-warning"><i class="ph ph-arrow-left"></i> Kembali</a> <br><br>
               </div>
               <div class="card-body px-0 py-3">
+                <div class="container-fluid">
+                  @if ($errors->any())
+
+                    <div class="alert alert-danger">
+
+                        <ul>
+
+                            @foreach ($errors->all() as $error)
+
+                                <li>{{ $error }}</li>
+
+                            @endforeach
+
+                        </ul>
+
+                    </div>
+
+                  @endif
+                </div>
                 <div class="table-responsive">
                 @if($act == 'create')
                   <form method="post" action="{{ url('/berita')}}" enctype="multipart/form-data">

@@ -14,7 +14,7 @@ class AgendaController extends Controller
     public function index()
     {
         $page = 'agenda';
-        $agenda = Agenda::join('bagian','agenda.id_bagian','=','bagian.id')->get();
+        $agenda = Agenda::select('agenda.*','bagian.nama_pengarah','bagian.nama_bagian')->join('bagian','agenda.id_bagian','=','bagian.id')->get();
         return view('dashboard.agenda.main',compact('page','agenda'));
     }
 

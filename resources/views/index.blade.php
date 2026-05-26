@@ -6,49 +6,64 @@
 
   <main class="main">
 
-    <section id="hero" class="hero section position-relative">
+    <section id="hero" class="hero-section">
 
-  <!-- Background Carousel -->
-  <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute top-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner h-100">
+          <div class="hero-slider container-fluid">
 
-      @foreach($slider as $s):
-        <div class="carousel-item active h-100">
-          <img src="{{ asset('storage/'.$s->name) }}" class="d-block w-100 h-100 object-fit-cover">
-        </div>
-      @endforeach
+              <!-- Carousel -->
+              <div id="carouselExampleFade"
+                  class="carousel slide carousel-fade h-100"
+                  data-bs-ride="carousel"
+                  data-bs-interval="3000">
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon btn btn-primary" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon btn btn-primary" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-    </div>
-  </div>
+                  <div class="carousel-inner h-100">
 
-  <!-- Overlay biar teks kebaca -->
-  <div class="position-absolute top-0 w-100 h-100" style="background: rgba(0,0,0,0.9);"></div>
+                      @foreach($slider as $key => $s)
 
-  <!-- Content -->
-  <div class="container position-relative text-white" style="z-index: 2;" data-aos="fade-up">
+                      <div class="carousel-item {{ $key == 0 ? 'active' : '' }} h-100">
 
-    <div class="row align-items-center" style="min-height: 400px;">
+                          <img src="{{ asset('storage/'.$s->name) }}"
+                              class="d-block w-100 h-100 object-fit-cover">
 
-      <div class="col-lg-6">
-        <div class="hero-content">
+                      </div>
+
+                      @endforeach
+
+                  </div>
+
+                  <!-- Overlay -->
+                  <div class="hero-overlay"></div>
+
+                  <!-- Content -->
+                  <div class="hero-content">
 
 
-        </div>
-      </div>
+                  </div>
 
-    </div>
+                  <!-- Button -->
+                  <button class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#carouselExampleFade"
+                          data-bs-slide="prev">
 
-  </div>
+                      <span class="carousel-control-prev-icon"></span>
 
-</section>
+                  </button>
+
+                  <button class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#carouselExampleFade"
+                          data-bs-slide="next">
+
+                      <span class="carousel-control-next-icon"></span>
+
+                  </button>
+
+              </div>
+
+          </div>
+
+      </section>
 
   <!-- About Section -->
     <section id="tentang" class="about section">
@@ -120,100 +135,39 @@
 
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
+            @foreach($berita as $b)
+            
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
               <div class="project-card">
                 <div class="image-wrapper">
-                  <img src="{{asset('orbit/img/portfolio/portfolio-2.webp')}}" alt="Project showcase" class="img-fluid" loading="lazy">
+                  <img src="{{asset('storage/'.$b->thumbnail)}}" alt="Project showcase" class="img-fluid" loading="lazy">
                   <div class="hover-overlay">
                     <div class="overlay-actions">
-                      <a href="{{asset('orbit/img/portfolio/portfolio-2.webp')}}" class="glightbox action-btn" data-gallery="portfolio">
+                      <!--<a href="{{url('detailBerita/'.$b->id)}}" class="glightbox action-btn" data-gallery="portfolio">
                         <i class="bi bi-eye"></i>
-                      </a>
-                      <a href="#" class="action-btn">
-                        <i class="bi bi-link-45deg"></i>
-                      </a>
+                      </a>-->
                     </div>
                   </div>
-                  <span class="category-badge">Web Design</span>
                 </div>
                 <div class="project-info">
-                  <h3>Corporate Dashboard System</h3>
-                  <p>Pellentesque habitant morbi tristique senectus et netus.</p>
+                  <h3>{{$b->judul}}</h3>
+                  <p>{!! Str::words($b->isi,20) !!}</p>
                   <div class="project-meta">
                     <div class="tech-tags">
-                      <span>Angular</span>
-                      <span>Python</span>
+                      <a href="{{url('/detailBerita/'.$b->id)}}"><span>Selengkapnya >></span></a>
                     </div>
-                    <span class="year">2024</span>
+                    <span class="year">{{date('d F Y',strtotime($b->created_at))}}</span>
                   </div>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile">
-              <div class="project-card featured">
-                <div class="image-wrapper">
-                  <img src="{{asset('orbit/img/portfolio/portfolio-4.webp')}}" alt="Project showcase" class="img-fluid" loading="lazy">
-                  <div class="hover-overlay">
-                    <div class="overlay-actions">
-                      <a href="{{ asset('orbit/img/portfolio/portfolio-4.webp')}}" class="glightbox action-btn" data-gallery="portfolio">
-                        <i class="bi bi-eye"></i>
-                      </a>
-                      <a href="#" class="action-btn">
-                        <i class="bi bi-link-45deg"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <span class="category-badge">Mobile Apps</span>
-                  <span class="featured-badge"><i class="bi bi-star-fill"></i> Featured</span>
-                </div>
-                <div class="project-info">
-                  <h3>Smart Finance Application</h3>
-                  <p>Maecenas tempus tellus eget condimentum rhoncus.</p>
-                  <div class="project-meta">
-                    <div class="tech-tags">
-                      <span>Swift</span>
-                      <span>Kotlin</span>
-                    </div>
-                    <span class="year">2024</span>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="project-card">
-                <div class="image-wrapper">
-                  <img src="{{asset('orbit/img/portfolio/portfolio-6.webp')}}" alt="Project showcase" class="img-fluid" loading="lazy">
-                  <div class="hover-overlay">
-                    <div class="overlay-actions">
-                      <a href="{{asset('orbit/img/portfolio/portfolio-6.webp')}}" class="glightbox action-btn" data-gallery="portfolio">
-                        <i class="bi bi-eye"></i>
-                      </a>
-                      <a href="#" class="action-btn">
-                        <i class="bi bi-link-45deg"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <span class="category-badge">Branding</span>
-                </div>
-                <div class="project-info">
-                  <h3>Fashion Label Identity</h3>
-                  <p>Donec quam felis ultricies nec pellentesque pretium.</p>
-                  <div class="project-meta">
-                    <div class="tech-tags">
-                      <span>Photoshop</span>
-                      <span>Illustrator</span>
-                    </div>
-                    <span class="year">2023</span>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
+          
+          @endforeach
+              
           </div><!-- End Portfolio Container -->
-
+            <div style="text-align:center; margin-top:20px;">
+              <a href="{{url('/allBerita')}}" class="btn btn-primary align-middle">Semua Berita</a>
+            </div>
         </div>
 
       </div>

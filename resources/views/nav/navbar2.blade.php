@@ -19,9 +19,9 @@
 
       <nav id="navmenu" class="navmenu me-2">
         <ul>
-          <li><a href="#hero">Beranda</a></li>
-          <li><a href="#tentang">Tentang Kami</a></li>
-          <li><a href="#berita">Berita</a></li>
+          <li><a href="{{url('/')}}#hero">Beranda</a></li>
+          <li><a href="{{url('/')}}#tentang">Tentang Kami</a></li>
+          <li><a href="{{url('/')}}#berita">Berita</a></li>
           <li><a href="{{url('/whistle_blowing#whistle')}}">Whistle Blowing System</a></li>
           <li class="dropdown"><a href="#"><span>Dokumen Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -31,9 +31,8 @@
             </ul>
           </li>
           
-          
         </ul>
-        
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
     </div>
   </header>

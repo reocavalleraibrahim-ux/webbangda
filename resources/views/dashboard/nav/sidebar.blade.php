@@ -53,6 +53,12 @@
             <span class="pc-mtext">Berita</span>
           </a>
         </li>
+        <li class="pc-item">
+          <a href="{{url('/apbd')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-chart-bar"></i></span>
+            <span class="pc-mtext">APBD</span>
+          </a>
+        </li>
 
         <li class="pc-item pc-hasmenu">
           <a href="#!" class="pc-link"
@@ -63,6 +69,13 @@
             <li class="pc-item"><a class="pc-link" href="{{url('/kategori')}}" data-i18n="Level 2.1">Kategori</a></li>
             <li class="pc-item"><a class="pc-link" href="{{url('/dokumen')}}" data-i18n="Level 2.1">Dokumen Publik</a></li>  
           </ul>
+        </li>
+
+        <li class="pc-item">
+          <a href="{{url('/wbs')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-bell-simple"></i></span>
+            <span class="pc-mtext">Whistle Blowing System</span>
+          </a>
         </li>
 
         <li class="pc-item">

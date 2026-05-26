@@ -8,6 +8,7 @@ use App\Models\Berita;
 use App\Models\Master;
 use App\Models\Kategori;
 use App\Models\Dokumen;
+use App\Models\Whistle;
 
 class MainController extends Controller
 {
@@ -17,7 +18,7 @@ class MainController extends Controller
         $visi = Master::where(['header' => 'visi'])->first();
         $misi = Master::where(['header' => 'misi'])->first();
         $berita = Berita::limit(6)->orderBy('id','desc')->get();
-        $kategori = Kategori::all();
+        $kategori = Kategori::rightJoin('dokumen','dokumen.kategori','=','kategori.id')->get();
         return view('index',compact('slider','berita','visi','misi','kategori'));
     }
 
@@ -38,7 +39,7 @@ class MainController extends Controller
     {
         $berita = Berita::where(['id' => $id])->first();
         $kategori = Kategori::all();
-        return view('detailBerita',compact('berita','kategori'));
+        return view('detail_berita',compact('berita','kategori'));
     }
 
     public function dok(String $id)
@@ -47,5 +48,52 @@ class MainController extends Controller
         $kat = Kategori::where(['id' => $id])->first();
         $dokumen = Dokumen::where(['kategori' => $id])->get();
         return view('dok',compact('kategori','kat','dokumen'));
+    }
+
+    public function whistle_blowing()
+    {
+        $kategori = Kategori::all();
+        return view('whistle_blowing',compact('kategori'));
+    }
+
+    public function formWbs()
+    {
+        $kategori = Kategori::all();
+        return view('form_wbs',compact('kategori'));
+    }
+
+    public function kirimWbs(Request $request)
+    {
+        $request->validate([
+            'nama_pelapor'      =>  'required|string',
+            'no_identitas'      =>  'required|numeric',
+            'alamat'            =>  'required|string',
+            'pekerjaan'         =>  'required|string',
+            'nomor_kontak'      =>  'required|numeric',
+            'uraian_aduan'      =>  'required|string',
+            'bukti_dukung'      =>  'required|mimes:pdf,jpg,png'
+        ]);
+
+        $uploadPath = $request->file('bukti_dukung')->store('aduan','public');
+
+        $data = [
+            'nama_pelapor'      =>  $request->nama_pelapor,
+            'no_identitas'      =>  $request->no_identitas,
+            'alamat'            =>  $request->alamat,
+            'pekerjaan'         =>  $request->pekerjaan,
+            'nomor_kontak'      =>  $request->nomor_kontak,
+            'uraian_aduan'      =>  $request->uraian_aduan,
+            'bukti_dukung'      =>  $uploadPath
+        ];
+
+        Whistle::create($data);
+
+        return redirect('/messageWbs')->with('success','Berhasil Mengirimkan Aduan');
+    }
+
+    public function messageWbs()
+    {
+        $kategori = Kategori::all();
+        return view('message_wbs',compact('kategori'));
     }
 }

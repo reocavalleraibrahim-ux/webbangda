@@ -14,13 +14,14 @@
         <a href="#">Pak Bejo</a>
         <a href="#">Sivero</a>
         <a href="#">Simbangda</a>
+        <a href="{{url('/signage')}}">Signage</a>
     </div>
 </div>
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-6 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center mb-4">
+          <a href="{{url('/')}}" class="logo d-flex align-items-center mb-4">
             <span class="sitename">Biro Administrasi Pembangunan Daerah</span>
           </a>
           <p><i class="bi bi-geo-alt-fill"></i> Jl. Pahlawan No.9 Kota Semarang, Jawa Tengah</p>
