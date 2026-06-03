@@ -39,3 +39,5 @@ Route::get('/whistle_blowing',[MainController::class,'whistle_blowing'])->name('
 Route::get('/formWbs',[MainController::class,'formWbs'])->name('formWbs');
 Route::post('/kirimWbs',[MainController::class,'kirimWbs'])->name('kirimWbs');
 Route::get('/messageWbs',[MainController::class,'messageWbs'])->name('messageWbs');
+Route::get('/dokumenPublik',[MainController::class,'dokumen'])->name('dokumen');
+Route::get('/kat/{id}',[MainController::class,'kategori'])->name('kat');

@@ -91,13 +91,39 @@
                 Tugas dan Fungsi kami diatur dalam <b>Peraturan Gubernur Jawa tengah Nomor 1 Tahun 2026 tentang Kedudukan, Susunan, Organisasi, Tugas dan Fungsi, Serta Tata Kerja Sekretariat Daerah, Sekretariat Dewan Perwakilan Rakyat Daerah, Inspektorat dan Pembentukan Staf Ahli Gubernur</b>.
               </p>
               <div class="features-grid">
-                <div class="feature-card">
+                <!--<div class="feature-card" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#tupoksi">
                   <span>Tugas Pokok dan Fungsi</span>
-                </div>
-                <div class="feature-card">
+                  <div class="modal fade" id="tupoksi" tabindex="-1">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title">Detail Data</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                  Isi modal di sini
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>-->
+                <div class="feature-card" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#maklumat">
                   <span>Maklumat Pelayanan</span>
+                  <div class="modal fade" id="tupoksi" tabindex="-1">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title">Detail Data</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                  Isi modal di sini
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#sp">
                   <span>Standar Pelayanan</span>
                 </div>
               </div>

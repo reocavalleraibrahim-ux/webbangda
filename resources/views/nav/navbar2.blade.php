@@ -23,14 +23,7 @@
           <li><a href="{{url('/')}}#tentang">Tentang Kami</a></li>
           <li><a href="{{url('/')}}#berita">Berita</a></li>
           <li><a href="{{url('/whistle_blowing#whistle')}}">Whistle Blowing System</a></li>
-          <li class="dropdown"><a href="#"><span>Dokumen Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              @foreach($kategori as $k)
-                <li><a href="{{url('dokumen/'.$k->kategori)}}">{{$k->nama_kategori}}</a></li>
-              @endforeach
-            </ul>
-          </li>
-          
+          <li><a href="{{url('/dokumenPublik')}}#dokumen">Dokumen Publik</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

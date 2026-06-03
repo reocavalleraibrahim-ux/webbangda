@@ -96,4 +96,19 @@ class MainController extends Controller
         $kategori = Kategori::all();
         return view('message_wbs',compact('kategori'));
     }
+
+    public function dokumen()
+    {
+        $kategori = Dokumen::leftJoin('kategori','dokumen.kategori','=','kategori.id')->get();
+        return view('dokumen',compact('kategori'));
+    }
+
+    public function kategori($id)
+    {
+        $kategori = Kategori::all();
+        $kat = Kategori::where(['id' => $id])->first();
+        $data = Dokumen::where(['kategori' => $id])->get();
+
+        return view('kategori',compact('kategori','data','kat'));
+    }
 }
